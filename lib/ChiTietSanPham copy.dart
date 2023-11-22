@@ -47,19 +47,24 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
     String phoneNumber = showFullPhoneNumber ? '0987654321' : '09*******';
 
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor:
+          Colors.grey[200], // Replace with your desired background color
+
       appBar: AppBar(
         title: const Text('Product Details'),
       ),
       body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Dòng 1 - Hiển thị thông tin sản phẩm
             Padding(
               padding: const EdgeInsets.fromLTRB(32, 8, 128, 8),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // Cột trái - Hình ảnh
                   Expanded(
                     flex: 3,
                     child: Column(
@@ -78,6 +83,7 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                             enlargeCenterPage: true,
                           ),
                         ),
+                        // Text elements below the image
                         const Text(
                           'Giày Converse Run Star Motion nam nữ, giày CV Run Star Motion bản S. Cấp full phụ kiện',
                           style: TextStyle(
@@ -113,6 +119,7 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                               ],
                             ),
                             const SizedBox(width: 16),
+                            // Display the number of comments
                             Text(
                               ' ${comments.length} bình luận',
                               style: const TextStyle(
@@ -123,6 +130,7 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                           ],
                         ),
                         const SizedBox(height: 8),
+                        // Dòng 2 - Giá sản phẩm
                         const Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
@@ -136,30 +144,37 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                         ),
                         const SizedBox(height: 16),
                         const SizedBox(height: 16),
+                        // Add additional information as needed
                       ],
                     ),
                   ),
                   const SizedBox(width: 64),
+                  // Cột phải - Nội dung
                   Expanded(
                     flex: 2,
                     child: Container(
-                      margin: const EdgeInsets.only(left: 16.0),
+                      margin: const EdgeInsets.only(
+                          left: 16.0), // Add margin to the left
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          // Dòng 3 - Thông tin người bán
                           Container(
                             height: 100,
                             decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: Colors.white, // Set the background color
                               border: Border.all(
-                                color: Colors.white,
+                                color:
+                                    Colors.white, // Set the color of the border
                               ),
                             ),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
+                                // Avt người bán (bo tròn)
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 16.0),
+                                  padding: const EdgeInsets.only(
+                                      left: 16.0), // Add right padding
                                   child: Container(
                                     width: 60,
                                     height: 60,
@@ -175,9 +190,11 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                                   ),
                                 ),
                                 const SizedBox(width: 16),
+                                // Tên người bán và hai nút
                                 Expanded(
                                   child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       const Text(
                                         'giaydepshop',
@@ -189,25 +206,29 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                                       const SizedBox(width: 16),
                                       ElevatedButton(
                                         onPressed: () {
-                                          // Handle the first button press
+                                          // Xử lý khi nhấn nút thứ nhất
                                         },
                                         style: ElevatedButton.styleFrom(
                                           shape: const RoundedRectangleBorder(
                                             borderRadius: BorderRadius.zero,
                                           ),
-                                          onPrimary: const Color(0xFFee4d2d),
+                                          onPrimary: const Color(
+                                              0xFFee4d2d), // Màu chữ cam
                                           side: const BorderSide(
-                                            color: Color(0xFFee4d2d),
+                                            color: Color(
+                                                0xFFee4d2d), // Màu viền cam
                                           ),
                                         ),
                                         child: const Text('Xem trang'),
                                       ),
+                                      // Khoảng cách giữa tên người bán và hai nút
                                     ],
                                   ),
                                 ),
                               ],
                             ),
                           ),
+
                           const SizedBox(height: 28),
                           GestureDetector(
                             onTap: () {
@@ -227,10 +248,11 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                                 borderRadius: BorderRadius.circular(5.0),
                               ),
                               child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment
+                                    .spaceBetween, // Align children to the start and end of the row
                                 children: [
-                                  Icon(Icons.phone, color: Colors.white),
+                                  Icon(Icons.phone,
+                                      color: Colors.white), // Phone icon
                                   const SizedBox(width: 16),
                                   Text(
                                     phoneNumber,
@@ -243,7 +265,8 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                                   ),
                                   Expanded(
                                     child: Align(
-                                      alignment: Alignment.centerRight,
+                                      alignment: Alignment
+                                          .centerRight, // Align the text to the right
                                       child: Text(
                                         "BẤM ĐỂ HIỆN SỐ",
                                         style: const TextStyle(
@@ -273,14 +296,16 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                                 borderRadius: BorderRadius.circular(5.0),
                               ),
                               child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment
+                                    .spaceBetween, // Align children to the start and end of the row
                                 children: [
-                                  Icon(Icons.chat, color: Colors.green),
+                                  Icon(Icons.chat,
+                                      color: Colors.green), // Phone icon
                                   const SizedBox(width: 16),
                                   Expanded(
                                     child: Align(
-                                      alignment: Alignment.centerRight,
+                                      alignment: Alignment
+                                          .centerRight, // Align the text to the right
                                       child: Text(
                                         "CHAT VỚI NGƯỜI BÁN",
                                         style: const TextStyle(
@@ -302,6 +327,7 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                 ],
               ),
             ),
+            // Dòng 2 - Hiển thị bình luận
             const Padding(
               padding: EdgeInsets.only(left: 36),
               child: Text(
@@ -312,6 +338,8 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                 ),
               ),
             ),
+
+            // Danh sách bình luận
             Align(
               alignment: Alignment.centerLeft,
               child: Container(
@@ -329,7 +357,7 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                   },
                 ),
               ),
-            ),
+            )
           ],
         ),
       ),
