@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'ChiTietSanPham.dart';
+import 'SanPhamDaDang.dart';
 
 void main() {
   runApp(const MyApp());
@@ -42,12 +43,20 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-void _navigateToChiTietSanPham() {
-  Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => ChiTietSanPham()),
-  );
-}
+  void _navigateToChiTietSanPham() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ChiTietSanPham()),
+    );
+  }
+
+  void _navigateToSanPhamDaDang() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) => SanPhamDaDang()), // Corrected the route
+    );
+  }
 
   void _incrementCounter() {
     setState(() {
@@ -97,12 +106,15 @@ void _navigateToChiTietSanPham() {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            
             ElevatedButton(
               onPressed: _navigateToChiTietSanPham,
               child: Text('Go to ChiTietSanPham'),
             ),
-
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: _navigateToSanPhamDaDang,
+              child: Text('Go to SanPhamDaDang'),
+            ),
           ],
         ),
       ),
